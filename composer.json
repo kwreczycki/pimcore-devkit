@@ -14,14 +14,70 @@
       "email": "jplaskonka@divante.pl",
       "homepage": "https://divante.co",
       "role": "Developer"
+    },
+    {
+      "name": "Wojciech Peisert",
+      "email": "wpeisert@divante.co",
+      "homepage": "https://divante.co",
+      "role": "Developer"
     }
   ],
+  "require": {
+    "php": ">=7.1",
+    "pimcore/pimcore": "^5.4.0"
+  },
+  "require-dev": {
+    "phpunit/phpunit": "^7",
+    "symfony/phpunit-bridge": "^3",
+    "behat/behat": "^3.3",
+    "friends-of-behat/context-service-extension": "^1.1",
+    "friends-of-behat/cross-container-extension": "^1.1",
+    "friends-of-behat/service-container-extension": "^1.0",
+    "friends-of-behat/symfony-extension": "^1.2",
+    "friends-of-behat/variadic-extension": "^1.1",
+    "mamuz/php-dependency-analysis": "^1.3",
+    "symplify/easy-coding-standard": "^4.3.0",
+    "leanphp/behat-code-coverage": "^3.2"
+  },
   "autoload": {
     "psr-4": {
       "PimcoreDevkitBundle\\": "src/"
     }
   },
+  "autoload-dev": {
+    "psr-4": {
+      "PimcoreDevkitBundle\\Test\\": "tests/lib/PimcoreDevkitBundle/Test"
+    },
+    "classmap": [
+      "app/AppKernel.php"
+    ]
+  },
+  "scripts": {
+    "post-create-project-cmd": "Pimcore\\Composer::postCreateProject",
+    "post-install-cmd": [
+      "Pimcore\\Composer::postInstall",
+      "@symfony-scripts"
+    ],
+    "post-update-cmd": [
+      "Pimcore\\Composer::postUpdate",
+      "@symfony-scripts"
+    ],
+    "pre-package-update": [
+      "Pimcore\\Composer::prePackageUpdate"
+    ],
+    "symfony-scripts": [
+      "Sensio\\Bundle\\DistributionBundle\\Composer\\ScriptHandler::clearCache",
+      "Sensio\\Bundle\\DistributionBundle\\Composer\\ScriptHandler::installAssets",
+      "Sensio\\Bundle\\DistributionBundle\\Composer\\ScriptHandler::installRequirementsFile",
+      "Sensio\\Bundle\\DistributionBundle\\Composer\\ScriptHandler::prepareDeploymentTarget"
+    ]
+  },
   "extra": {
+    "symfony-app-dir": "app",
+    "symfony-bin-dir": "bin",
+    "symfony-var-dir": "var",
+    "symfony-tests-dir": "tests",
+    "symfony-assets-install": "relative",
     "pimcore": {
       "bundles": [
         "PimcoreDevkitBundle\\PimcoreDevkitBundle"
@@ -29,4 +85,3 @@
     }
   }
 }
- 

@@ -1,0 +1,60 @@
+sudo: false
+language: php
+services:
+- mysql
+- redis
+
+addons:
+  #mariadb: '10.0'
+  hosts:
+  - pimcore-devkit.local
+env:
+  global:
+  - PIMCORE_ENVIRONMENT=test
+
+matrix:
+  include:
+  - sudo: required
+    php: 7.1
+    env:
+    - PIMCORE_BRANCH="tags/v5.4.0"
+
+  - sudo: required
+    php: 7.2
+    env:
+    - PIMCORE_BRANCH="tags/v5.4.0"
+
+  - sudo: required
+    php: 7.1
+    env:
+    - PIMCORE_BRANCH="tags/v5.4.1"
+
+  - sudo: required
+    php: 7.2
+    env:
+    - PIMCORE_BRANCH="tags/v5.4.1"
+
+  - sudo: required
+    php: 7.1
+    env:
+    - PIMCORE_BRANCH="master"
+
+  - sudo: required
+    php: 7.2
+    env:
+    - PIMCORE_BRANCH="master"
+  fast_finish: true
+
+cache:
+  directories:
+  - $HOME/.cache/composer
+
+install:
+- misc/travis/install.sh
+
+script:
+- misc/travis/script.sh
+
+notifications:
+  email:
+  - wpeisert@divante.co

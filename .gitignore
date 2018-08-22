@@ -1,0 +1,6 @@
+.idea/
+bin/symfony_requirements
+var/
+!var/.gitkeep
+vendor/
+web/
