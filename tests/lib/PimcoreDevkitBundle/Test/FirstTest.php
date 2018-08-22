@@ -20,4 +20,13 @@ final class FirstTest extends TestCase
         $this->assertInstanceOf(\Pimcore\Model\Asset\Image::class, $image);
         $this->assertInstanceOf(\Pimcore\Model\Asset\Text::class, $image);
     }
+
+    public function testTest3(): void
+    {
+        $list = new \Pimcore\Model\DataObject\Classificationstore\StoreConfig\Listing();
+        $list->load();
+        foreach ($list->getList() as $item) {
+            $this->assertInstanceOf(\Pimcore\Model\DataObject\Classificationstore\StoreConfig::class, $item);
+        }
+    }
 }
