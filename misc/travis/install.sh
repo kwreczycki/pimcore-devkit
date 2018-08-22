@@ -18,7 +18,7 @@ mysql -e "CREATE DATABASE pimcore_devkit_test CHARSET=utf8mb4;"
 #########
 ##########################################################################################
 mkdir -p $TRAVIS_BUILD_DIR/var/config
-cp $CS_HOME/misc/config/system.php var/config/system.php
+cp $TRAVIS_BUILD_DIR/misc/config/system.php $TRAVIS_BUILD_DIR/var/config/system.php
 
 ##########################################################################################
 #########
