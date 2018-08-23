@@ -13,4 +13,12 @@ class AppKernel extends Kernel
 
         \Pimcore::setKernel($this);
     }
+
+    /**
+     * {@inheritdoc}
+     */
+    public function registerContainerConfiguration(\Symfony\Component\Config\Loader\LoaderInterface $loader)
+    {
+        parent::registerContainerConfiguration($loader);
+    }
 }
