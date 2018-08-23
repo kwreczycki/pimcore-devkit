@@ -17,6 +17,7 @@ mysql -e "CREATE DATABASE pimcore_devkit_test CHARSET=utf8mb4;"
 #########  add config templates
 #########
 ##########################################################################################
+
 mkdir -p $TRAVIS_BUILD_DIR/var/config
 cp $TRAVIS_BUILD_DIR/misc/config/system.php $TRAVIS_BUILD_DIR/var/config/system.php
 
@@ -25,5 +26,14 @@ cp $TRAVIS_BUILD_DIR/misc/config/system.php $TRAVIS_BUILD_DIR/var/config/system.
 #########  Install composer dependencies
 #########
 ##########################################################################################
+
 COMPOSER_MEMORY_LIMIT=-1 composer req doctrine/instantiator:1.0.5 --no-interaction --no-scripts
 COMPOSER_MEMORY_LIMIT=-1 composer install -o
+
+##########################################################################################
+#########
+#########  Install Pimcore
+#########
+##########################################################################################
+
+php bin/install
