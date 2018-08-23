@@ -19,30 +19,31 @@ matrix:
     env:
     - PIMCORE_BRANCH="tags/v5.4.0"
 
-  - sudo: required
-    php: 7.2
-    env:
-    - PIMCORE_BRANCH="tags/v5.4.0"
+#  - sudo: required
+#    php: 7.2
+#    env:
+#    - PIMCORE_BRANCH="tags/v5.4.0"
 
-  - sudo: required
-    php: 7.1
-    env:
-    - PIMCORE_BRANCH="tags/v5.4.1"
+#  - sudo: required
+#    php: 7.1
+#    env:
+#    - PIMCORE_BRANCH="tags/v5.4.1"
 
-  - sudo: required
-    php: 7.2
-    env:
-    - PIMCORE_BRANCH="tags/v5.4.1"
+#  - sudo: required
+#    php: 7.2
+#    env:
+#    - PIMCORE_BRANCH="tags/v5.4.1"
 
-  - sudo: required
-    php: 7.1
-    env:
-    - PIMCORE_BRANCH="master"
+#  - sudo: required
+#    php: 7.1
+#    env:
+#    - PIMCORE_BRANCH="master"
 
-  - sudo: required
-    php: 7.2
-    env:
-    - PIMCORE_BRANCH="master"
+#  - sudo: required
+#    php: 7.2
+#    env:
+#    - PIMCORE_BRANCH="master"
+
   fast_finish: true
 
 cache:

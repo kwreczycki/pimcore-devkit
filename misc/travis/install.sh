@@ -36,4 +36,4 @@ COMPOSER_MEMORY_LIMIT=-1 composer install -o
 #########
 ##########################################################################################
 
-php bin/install
+vendor/bin/pimcore-install
