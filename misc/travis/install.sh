@@ -36,4 +36,4 @@ COMPOSER_MEMORY_LIMIT=-1 composer install -o
 #########
 ##########################################################################################
 
-vendor/bin/pimcore-install
+vendor/bin/pimcore-install --ignore-existing-config --admin-username admin --admin-password admin123 --mysql-username travis --mysql-database pimcore_devkit_test
