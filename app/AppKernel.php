@@ -7,18 +7,18 @@ class AppKernel extends Kernel
     /**
      * {@inheritdoc}
      */
-    public function boot()
+    public function registerBundlesToCollection(\Pimcore\HttpKernel\BundleCollection\BundleCollection $collection)
     {
-        parent::boot();
-
-        \Pimcore::setKernel($this);
+        $collection->addBundle(new \PimcoreDevkitBundle\PimcoreDevkitBundle());
     }
 
     /**
      * {@inheritdoc}
      */
-    public function registerContainerConfiguration(\Symfony\Component\Config\Loader\LoaderInterface $loader)
+    public function boot()
     {
-        parent::registerContainerConfiguration($loader);
+        parent::boot();
+
+        \Pimcore::setKernel($this);
     }
 }
