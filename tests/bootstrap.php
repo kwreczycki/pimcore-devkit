@@ -15,7 +15,7 @@ if (!defined('TESTS_PATH')) {
 
 define('PIMCORE_TEST', true);
 
-require_once __DIR__ .'/../app/TestAppKernel.php';
+require_once __DIR__ .'/../app/AppKernel.php';
 
 if (file_exists(PIMCORE_PROJECT_ROOT.'/pimcore/config/bootstrap.php')) {
     require_once PIMCORE_PROJECT_ROOT.'/pimcore/config/bootstrap.php';
